@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
 .header-container {
-  margin: 6rem;
+  height: 30vh;
+  width: 75vw;
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
 }
 
 @keyframes showTopText {
@@ -15,15 +21,15 @@
 }
 .animated-title {
   color: #222;
-  font-family: Roboto, Arial, sans-serif;
-  height: 90vmin;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-100%, -50%) scale(0.5);
-  width: 90vmin;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  height: 200%;
+  position: inherit;
+  transform: translate(-20%, -25%) scale(0.5);
+  width: 100%;
 }
-.animated-title > div {
+.animated-title > div:not(.social-links) {
   height: 50%;
   overflow: hidden;
   position: absolute;
@@ -31,7 +37,7 @@
 }
 .animated-title > div div {
   font-size: 10vmin;
-  padding: 2vmin 0;
+  padding: 2% 0;
   position: absolute;
 }
 .animated-title > div div span {
@@ -41,7 +47,7 @@
   font-size: 6vmin;
 }
 .animated-title > div.text-top {
-  border-bottom: 1vmin solid #000;
+  border-bottom: 1vmin solid #767676;
   top: 0;
 }
 .animated-title > div.text-top div {
@@ -52,7 +58,7 @@
   transform: translate(0, 100%);
 }
 .animated-title > div.text-top div span:first-child {
-  color: #767676;
+  color: black;
 }
 .animated-title > div.text-bottom {
   bottom: 0;
@@ -63,4 +69,35 @@
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+.social-links {
+  position: relative;
+  float: right;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.73rem;
+  transform: translate(-20%, 450%) scale(2);
+  animation-name: fade-in;
+  animation-delay: 2.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.social-links path {
+  transition: fill 0.3s ease;
+  fill: var(--gray-400);
+}
+
+.social-links a:hover svg path {
+  fill: var(--gray-900);
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+
 }
