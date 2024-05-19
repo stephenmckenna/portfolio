@@ -190,7 +190,7 @@ img {
   }
 }
 
-*, *:before, *:after {
+*, *:before, *:after:not(.blob) {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
